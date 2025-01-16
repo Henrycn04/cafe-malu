@@ -23,7 +23,7 @@ namespace backend.Infrastructure
         public ListaClientesModel ObtenerClientes()
         {
             List<ClienteModel> listaClientes = new List<ClienteModel>();
-            string query = @"SELECT * FROM Cliente";
+            string query = @"SELECT * FROM Clientes";
 
             try
             {

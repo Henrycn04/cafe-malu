@@ -23,6 +23,7 @@ namespace backend.Infrastructure
 
         public int RegistrarVenta(VentaModel venta)
         {
+            Console.WriteLine(venta.Cantidad);
             int filas = 0;
             return filas;
         }

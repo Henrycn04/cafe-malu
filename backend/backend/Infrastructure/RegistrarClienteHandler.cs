@@ -23,8 +23,27 @@ namespace backend.Infrastructure
 
         public int RegistrarCliente(ClienteModel cliente)
         {
-            int filas = 0;
-            return filas;
+            string query = @"INSERT INTO Clientes (Nombre, ClienteBusqueda, Frecuencia, NumeroTelefonico) 
+                     VALUES (@Nombre, @ClienteBusqueda, @Frecuencia, @NumeroTelefonico)";
+
+            try
+            {
+                _connection.Open();
+                using (SqlCommand commandForQuery = new SqlCommand(query, _connection))
+                {
+                    commandForQuery.Parameters.AddWithValue("@Nombre", cliente.Nombre);
+                    commandForQuery.Parameters.AddWithValue("@ClienteBusqueda", cliente.ClienteBusqueda);
+                    commandForQuery.Parameters.AddWithValue("@Frecuencia", cliente.Frecuencia);
+                    commandForQuery.Parameters.AddWithValue("@NumeroTelefonico", cliente.NumeroTelefonico);
+
+                    commandForQuery.ExecuteNonQuery();
+                }
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return 1;
         }
     }
 }
