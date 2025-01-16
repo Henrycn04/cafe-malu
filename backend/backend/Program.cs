@@ -35,6 +35,14 @@ builder.Services.AddTransient<RegistrarCafeHandler>();
 builder.Services.AddScoped<IRegistrarCafe, RegistrarCafeHandler>();
 builder.Services.AddScoped<RegistrarCafeCommand>();
 
+builder.Services.AddTransient<ObtenerCafesHandler>();
+builder.Services.AddScoped<IObtenerCafe, ObtenerCafesHandler>();
+builder.Services.AddScoped<ObtenerCafesQuery>();
+
+builder.Services.AddTransient<ObtenerClientesHandler>();
+builder.Services.AddScoped<IObtenerClientes, ObtenerClientesHandler>();
+builder.Services.AddScoped<ObtenerClientesQuery>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
