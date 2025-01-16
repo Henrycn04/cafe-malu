@@ -16,7 +16,7 @@
             :multiple="false"
             placeholder="Seleccione o busque un cliente"
           />
-          <button type="button" @click="mostrarModal('cliente')">Ingresar un nuevo cliente</button>
+          <button type="button" @click="mostrarFormularioCliente">Ingresar un nuevo cliente</button>
         </div>
       </div>
 
@@ -46,7 +46,7 @@
             required
             placeholder="Seleccione o busque un tipo de café"
           />
-          <button type="button" @click="mostrarModal('cafe')">Ingresar un nuevo tipo de café</button>
+          <button type="button" @click="mostrarFormularioCafe">Ingresar un nuevo tipo de café</button>
         </div>
       </div>
 
@@ -83,39 +83,51 @@
       </div>
     </form>
 
-    <!-- Modal para agregar cliente -->
-    <div v-if="modalVisible === 'cliente'" class="modal-overlay">
-      <div class="modal">
-        <h2>Agregar Cliente</h2>
+    <!-- Modal para nuevo cliente -->
+    <div v-if="mostrarModalCliente" class="modal">
+      <div class="modal-content">
+        <h2>Ingresar Nuevo Cliente</h2>
         <form @submit.prevent="guardarNuevoCliente">
           <div class="form-group">
             <label for="nombreCliente">Nombre</label>
-            <input type="text" id="nombreCliente" v-model="nuevoCliente.nombre" required />
+            <input type="text" id="nombreCliente" v-model="nuevoCliente.Nombre" required />
           </div>
           <div class="form-group">
-            <label for="emailCliente">Email</label>
-            <input type="email" id="emailCliente" v-model="nuevoCliente.email" required />
+            <label for="telefonoCliente">Número Telefónico</label>
+            <input type="text" id="telefonoCliente" v-model="nuevoCliente.NumeroTelefonico" required />
           </div>
-          <div class="form-buttons">
-            <button type="submit">Guardar</button>
-            <button type="button" @click="cerrarModal">Cancelar</button>
+          <div class="form-group">
+            <button type="submit">Guardar Cliente</button>
+            <button type="button" @click="cerrarFormularioCliente">Cancelar</button>
           </div>
         </form>
       </div>
     </div>
 
-    <!-- Modal para agregar café -->
-    <div v-if="modalVisible === 'cafe'" class="modal-overlay">
-      <div class="modal">
-        <h2>Agregar Café</h2>
+    <!-- Modal para nuevo café -->
+    <div v-if="mostrarModalCafe" class="modal">
+      <div class="modal-content">
+        <h2>Ingresar Nuevo Café</h2>
         <form @submit.prevent="guardarNuevoCafe">
           <div class="form-group">
             <label for="nombreCafe">Nombre</label>
-            <input type="text" id="nombreCafe" v-model="nuevoCafe.nombre" required />
+            <input type="text" id="nombreCafe" v-model="nuevoCafe.Nombre" required />
           </div>
-          <div class="form-buttons">
-            <button type="submit">Guardar</button>
-            <button type="button" @click="cerrarModal">Cancelar</button>
+          <div class="form-group">
+            <label for="pesoCafe">Peso (kg)</label>
+            <input type="number" id="pesoCafe" v-model.number="nuevoCafe.Peso" min="0.1" step="0.1" required />
+          </div>
+          <div class="form-group">
+            <label for="especialidadCafe">Especialidad</label>
+            <input type="checkbox" id="especialidadCafe" v-model="nuevoCafe.Especialidad" />
+          </div>
+          <div class="form-group">
+            <label for="precioCafe">Precio Unitario</label>
+            <input type="number" id="precioCafe" v-model.number="nuevoCafe.PrecioUnitario" min="0" step="0.01" required />
+          </div>
+          <div class="form-group">
+            <button type="submit">Guardar Café</button>
+            <button type="button" @click="cerrarFormularioCafe">Cancelar</button>
           </div>
         </form>
       </div>
@@ -124,16 +136,16 @@
 </template>
 
 <script>
-import Multiselect from "vue-multiselect";
-import "vue-multiselect/dist/vue-multiselect.min.css";
+import Multiselect from 'vue-multiselect';
+import 'vue-multiselect/dist/vue-multiselect.min.css';
 import axios from "axios";
-
 export default {
   components: {
     Multiselect,
   },
   data() {
     return {
+      // Lista de clientes y cafés disponibles
       clientes: [
         { id: 1, nombre: "Cliente 1" },
         { id: 2, nombre: "Cliente 2" },
@@ -144,6 +156,7 @@ export default {
         { id: 2, nombre: "Café Robusta" },
         { id: 3, nombre: "Café Geisha" },
       ],
+      // Datos de la venta
       venta: {
         Cliente: null,
         Fecha: new Date().toISOString().split("T")[0],
@@ -151,41 +164,61 @@ export default {
         Cantidad: 0,
         Pago: 0.0,
       },
-      modalVisible: null,
+      // Datos para nuevos formularios
       nuevoCliente: {
-        nombre: "",
-        email: "",
+        Nombre: "",
+        NumeroTelefonico: "",
       },
       nuevoCafe: {
-        nombre: "",
+        Nombre: "",
+        Peso: 0.0,
+        Especialidad: false,
+        PrecioUnitario: 0.0,
       },
+      mostrarModalCliente: false,
+      mostrarModalCafe: false,
     };
   },
   methods: {
-    mostrarModal(tipo) {
-      this.modalVisible = tipo;
+    customFilter(option, search) {
+      if (!search) return true;
+      return option.label.toLowerCase().includes(search.toLowerCase());
     },
-    cerrarModal() {
-      this.modalVisible = null;
+    mostrarFormularioCliente() {
+      this.mostrarModalCliente = true;
+    },
+    cerrarFormularioCliente() {
+      this.mostrarModalCliente = false;
     },
     guardarNuevoCliente() {
-      this.clientes.push({
-        id: this.clientes.length + 1,
-        nombre: this.nuevoCliente.nombre,
-        email: this.nuevoCliente.email,
-      });
-      this.cerrarModal();
+      if (this.nuevoCliente.Nombre && this.nuevoCliente.NumeroTelefonico) {
+        this.addNuevoCliente();
+        this.cerrarFormularioCliente();
+      } else {
+        alert("Complete todos los campos para agregar un nuevo cliente.");
+      }
+    },
+    mostrarFormularioCafe() {
+      this.mostrarModalCafe = true;
+    },
+    cerrarFormularioCafe() {
+      this.mostrarModalCafe = false;
     },
     guardarNuevoCafe() {
-      this.cafes.push({
-        id: this.cafes.length + 1,
-        nombre: this.nuevoCafe.nombre,
-      });
-      this.cerrarModal();
+      if (
+        this.nuevoCafe.Nombre &&
+        this.nuevoCafe.Peso > 0 &&
+        this.nuevoCafe.PrecioUnitario >= 0
+      ) {
+        this.addNuevoCafe();
+        this.cerrarFormularioCafe();
+      } else {
+        alert("Complete todos los campos para agregar un nuevo café.");
+      }
     },
     guardarVenta() {
       if (this.validarVenta()) {
-        console.log("Venta guardada:", this.venta);
+        // agregar venta
         alert("Venta registrada exitosamente.");
         this.resetFormulario();
       } else {
@@ -223,19 +256,48 @@ export default {
     },
 
     addNuevoCliente() {
-      axios.post(this.$backendAddress + "api/UserData/updateData", {
-        name: this.newData.name,
-        emailAddress: this.newData.emailAddress,
-        phoneNumber: this.newData.phoneNumber,
-        UserID: this.userID
-      }).then((response)=>{
-        console.log(response.data);
-        alert("Se actualizaron los datos correctamente");
-        this.$router.push("UserProfile");
+      console.log("Datos enviados:", {
+    Nombre: this.nuevoCliente.Nombre,
+    NumeroTelefonico: this.nuevoCliente.NumeroTelefonico
+  });
+      axios.post(this.$backendAddress + "api/Ventas/RegistrarCliente", {
+        id: 0, // Según el ejemplo, el backend requiere este campo
+    nombre: this.nuevoCliente.Nombre, // Coincide con el "nombre" esperado por el backend
+    clienteBusqueda: this.nuevoCliente.Nombre, // Campo adicional requerido por el backend
+    frecuencia: 0, // Según el ejemplo, este campo también es requerido
+    numeroTelefonico: this.nuevoCliente.NumeroTelefonico
+      }).then(()=>{
+        this.$router.push("/");
       }).catch((error)=>{
-        console.log("Error al hacer update ", error);
-        alert("Error al actualizar datos, volviendo al perfil");
-        this.$router.push("UserProfile");
+        console.error("Error en cliente:", error.response ? error.response.data : error);
+        this.$router.push("/");
+      })
+    },
+    addNuevoCafe() {
+      axios.post(this.$backendAddress + "api/Ventas/RegistrarCafe", {
+        Nombre: this.nuevoCafe.Nombre,
+        Peso: this.nuevoCafe.Peso,
+        Especialidad: this.nuevoCafe.Especialidad,
+        PrecioUnitario: this.nuevoCafe.PrecioUnitario
+      }).then(()=>{
+        this.$router.push("/");
+      }).catch(()=>{
+        console.error("Error en cafe");
+        this.$router.push("/");
+      })
+    },
+    addNuevaVenta() {
+      axios.post(this.$backendAddress + "api/Ventas/RegistrarVenta", {
+        IDCliente: this.venta.Cliente.ID,
+        Fecha: this.venta.Fecha,
+        Cafe: this.venta.Cafe.ID,
+        Cantidad: this.venta.Cantidad,
+        Pago: this.venta.Pago,
+      }).then(()=>{
+        this.$router.push("/");
+      }).catch(()=>{
+        console.error("Error en venta");
+        this.$router.push("/");
       })
     },
   },
@@ -251,6 +313,28 @@ export default {
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
@@ -303,37 +387,5 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.modal {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
-}
-
-.modal h2 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-.modal .form-buttons {
-  display: flex;
-  justify-content: space-between;
 }
 </style>
