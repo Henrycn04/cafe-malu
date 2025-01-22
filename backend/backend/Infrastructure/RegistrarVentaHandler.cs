@@ -8,6 +8,8 @@ namespace backend.Infrastructure
     public interface IRegistrarVenta
     {
         int RegistrarVenta(VentaModel venta);
+        double ObtenerPrecioCafe(int IDCafe);
+        double ObtenerPesoCafe(int IDCafe);
     }
     public class RegistrarVentaHandler : IRegistrarVenta
     {
@@ -52,6 +54,50 @@ namespace backend.Infrastructure
                 _connection.Close();
             }
             return filas;
+        }
+
+        public double ObtenerPrecioCafe(int IDCafe)
+        {
+            double precio = 0.0;
+            string query = @"
+                SELECT PrecioUnitario FROM dbo.Cafe
+                WHERE ID = @IDCafe";
+            try
+            {
+                _connection.Open();
+                using (SqlCommand commandForQuery = new SqlCommand(query, _connection))
+                {
+                    commandForQuery.Parameters.AddWithValue("@IDCafe", IDCafe);
+                    precio = (double)commandForQuery.ExecuteScalar();
+                }
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return precio;
+        }
+
+        public double ObtenerPesoCafe(int IDCafe)
+        {
+            double peso = 0.0;
+            string query = @"
+                SELECT Peso FROM dbo.Cafe
+                WHERE ID = @IDCafe";
+            try
+            {
+                _connection.Open();
+                using (SqlCommand commandForQuery = new SqlCommand(query, _connection))
+                {
+                    commandForQuery.Parameters.AddWithValue("@IDCafe", IDCafe);
+                    peso = (double)commandForQuery.ExecuteScalar();
+                }
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return peso;
         }
     }
 }
