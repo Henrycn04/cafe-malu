@@ -42,8 +42,7 @@
             :label="'nombre'"
             :track-by="'nombre'"
             :filter="customFilter"
-            id="cafe"
-            required
+            :multiple="false"
             placeholder="Seleccione o busque un tipo de café"
           />
           <button type="button" @click="mostrarFormularioCafe">Ingresar un nuevo tipo de café</button>
@@ -257,32 +256,32 @@ export default {
 
     addNuevoCliente() {
       console.log("Datos enviados:", {
-    Nombre: this.nuevoCliente.Nombre,
-    NumeroTelefonico: this.nuevoCliente.NumeroTelefonico
-  });
+        Nombre: this.nuevoCliente.Nombre,
+        NumeroTelefonico: this.nuevoCliente.NumeroTelefonico
+      });
       axios.post(this.$backendAddress + "api/Ventas/RegistrarCliente", {
-        id: 0, // Según el ejemplo, el backend requiere este campo
-    nombre: this.nuevoCliente.Nombre, // Coincide con el "nombre" esperado por el backend
-    clienteBusqueda: this.nuevoCliente.Nombre, // Campo adicional requerido por el backend
-    frecuencia: 0, // Según el ejemplo, este campo también es requerido
-    numeroTelefonico: this.nuevoCliente.NumeroTelefonico
+        id: 0, // se crea solo
+        nombre: this.nuevoCliente.Nombre,
+        clienteBusqueda: this.nuevoCliente.Nombre,
+        frecuencia: 0, // se calcula
+        numeroTelefonico: this.nuevoCliente.NumeroTelefonico
       }).then(()=>{
         this.$router.push("/");
       }).catch((error)=>{
-        console.error("Error en cliente:", error.response ? error.response.data : error);
+        console.error("Error en cliente: ", error.response ? error.response.data : error);
         this.$router.push("/");
       })
     },
     addNuevoCafe() {
       axios.post(this.$backendAddress + "api/Ventas/RegistrarCafe", {
-        Nombre: this.nuevoCafe.Nombre,
-        Peso: this.nuevoCafe.Peso,
-        Especialidad: this.nuevoCafe.Especialidad,
-        PrecioUnitario: this.nuevoCafe.PrecioUnitario
+        nombre: this.nuevoCafe.Nombre,
+        peso: this.nuevoCafe.Peso,
+        especialidad: this.nuevoCafe.Especialidad,
+        precioUnitario: this.nuevoCafe.PrecioUnitario
       }).then(()=>{
         this.$router.push("/");
-      }).catch(()=>{
-        console.error("Error en cafe");
+      }).catch((error)=>{
+        console.error("Error en cafe: ", error.response ? error.response.data : error);
         this.$router.push("/");
       })
     },
@@ -295,8 +294,8 @@ export default {
         Pago: this.venta.Pago,
       }).then(()=>{
         this.$router.push("/");
-      }).catch(()=>{
-        console.error("Error en venta");
+      }).catch((error)=>{
+        console.error("Error en venta: ", error.response ? error.response.data : error);
         this.$router.push("/");
       })
     },

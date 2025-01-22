@@ -62,8 +62,7 @@
               "RelativeToolTip": "backend\\Infrastructure\\ObtenerClientesHandler.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAwwBYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T22:47:24.672Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-16T22:47:24.672Z"
             },
             {
               "$type": "Document",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "backend\\Program.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T22:37:17.756Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-16T22:37:17.756Z"
             },
             {
               "$type": "Document",
@@ -88,8 +86,7 @@
               "RelativeToolTip": "backend\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-16T22:01:42.733Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-16T22:01:42.733Z"
             },
             {
               "$type": "Document",
@@ -101,8 +98,7 @@
               "RelativeToolTip": "backend\\API\\VentasController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T20:20:47.518Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-16T20:20:47.518Z"
             },
             {
               "$type": "Document",
@@ -114,8 +110,7 @@
               "RelativeToolTip": "backend\\Infrastructure\\RegistrarVentaHandler.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T20:46:45.8Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-16T20:46:45.8Z"
             },
             {
               "$type": "Document",
@@ -152,8 +147,7 @@
               "RelativeToolTip": "backend\\Domain\\CafeModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T20:25:54.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-16T20:25:54.774Z"
             },
             {
               "$type": "Document",
@@ -165,8 +159,7 @@
               "RelativeToolTip": "backend\\Domain\\ClienteModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T20:25:40.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-16T20:25:40.734Z"
             },
             {
               "$type": "Document",
@@ -178,8 +171,7 @@
               "RelativeToolTip": "backend\\Domain\\VentaModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T20:25:27.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-16T20:25:27.776Z"
             }
           ]
         }
