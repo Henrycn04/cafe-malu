@@ -144,17 +144,8 @@ export default {
   },
   data() {
     return {
-      // Lista de clientes y cafés disponibles
-      clientes: [
-        { id: 1, nombre: "Cliente 1" },
-        { id: 2, nombre: "Cliente 2" },
-        { id: 3, nombre: "Cliente Especial" },
-      ],
-      cafes: [
-        { id: 1, nombre: "Café Arábica" },
-        { id: 2, nombre: "Café Robusta" },
-        { id: 3, nombre: "Café Geisha" },
-      ],
+      clientes: [],
+      cafes: [],
       // Datos de la venta
       venta: {
         Cliente: null,
@@ -242,18 +233,29 @@ export default {
       };
     },
     getClientes() {
-      axios.get(this.$backendAddress + "api/CompanyProfileData/UserCompanies", {
-
-      })
-      .then((response) => {
-        this.userCompanies = response.data;
-                       
-      })
-      .catch((error) => {
-        console.error("Error obtaining user companies:", error);
-      });
+      axios.get(this.$backendAddress + "api/Ventas/ObtenerClientes")
+        .then((response) => {
+          this.clientes1 = response.data.clientes; // Verifica que sea un arreglo.
+          this.clientes = [...this.clientes1]; // Verifica que sea un arreglo.
+          console.log("Clientes: ", this.clientes);
+        })
+        .catch((error) => {
+          console.error("Error obteniendo clientes:", error);
+          this.clientes = []; // Asegura que esté inicializado.
+        });
     },
-
+    getCafes() {
+      axios.get(this.$backendAddress + "api/Ventas/ObtenerCafes")
+        .then((response) => {
+          this.cafes1 = response.data.cafes; // Verifica que sea un arreglo.
+          this.cafes = [...this.cafes1]; // Verifica que sea un arreglo.
+          console.log("Cafés: ", this.cafes);
+        })
+        .catch((error) => {
+          console.error("Error obteniendo cafés:", error);
+          this.cafes = []; // Asegura que esté inicializado.
+        });
+    },
     addNuevoCliente() {
       console.log("Datos enviados:", {
         Nombre: this.nuevoCliente.Nombre,
@@ -266,10 +268,10 @@ export default {
         frecuencia: 0, // se calcula
         numeroTelefonico: this.nuevoCliente.NumeroTelefonico
       }).then(()=>{
-        this.$router.push("/");
+        window.location.reload();
       }).catch((error)=>{
         console.error("Error en cliente: ", error.response ? error.response.data : error);
-        this.$router.push("/");
+        window.location.reload();
       })
     },
     addNuevoCafe() {
@@ -279,10 +281,10 @@ export default {
         especialidad: this.nuevoCafe.Especialidad,
         precioUnitario: this.nuevoCafe.PrecioUnitario
       }).then(()=>{
-        this.$router.push("/");
+        window.location.reload();
       }).catch((error)=>{
         console.error("Error en cafe: ", error.response ? error.response.data : error);
-        this.$router.push("/");
+        window.location.reload();
       })
     },
     addNuevaVenta() {
@@ -293,13 +295,19 @@ export default {
         Cantidad: this.venta.Cantidad,
         Pago: this.venta.Pago,
       }).then(()=>{
-        this.$router.push("/");
+        window.location.reload();
       }).catch((error)=>{
         console.error("Error en venta: ", error.response ? error.response.data : error);
-        this.$router.push("/");
+        window.location.reload();
       })
     },
+    
   },
+  mounted() {
+    this.getClientes();
+    this.getCafes();
+  }
+  
 };
 </script>
 
