@@ -4,7 +4,7 @@
     {
         public int ID { get; set; }
         public int IDCliente { get; set; }
-        public string Fecha { get; set; }
+        public DateTime Fecha { get; set; }
         public int Semana { get; set; }
         public int IDCafe { get; set; }
         public int Cantidad { get; set; }
