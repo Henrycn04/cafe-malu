@@ -23,8 +23,34 @@ namespace backend.Infrastructure
 
         public int RegistrarVenta(VentaModel venta)
         {
-            Console.WriteLine(venta.Cantidad);
             int filas = 0;
+            string query = @"INSERT INTO Ventas (IDCliente, Fecha, Semana, IDCafe, Cantidad, PrecioTotal, Pago, Saldo, Debe, PesoTotal) 
+                     VALUES (@IDCliente, @Fecha, @Semana, @IDCafe, @Cantidad, @PrecioTotal, @Pago, @Saldo, @Debe, @PesoTotal)";
+
+            try
+            {
+                _connection.Open();
+                using (SqlCommand commandForQuery = new SqlCommand(query, _connection))
+                {
+                    commandForQuery.Parameters.AddWithValue("@IDCliente", venta.IDCliente);
+                    commandForQuery.Parameters.AddWithValue("@Fecha", venta.Fecha);
+                    commandForQuery.Parameters.AddWithValue("@Semana", venta.Semana);
+                    commandForQuery.Parameters.AddWithValue("@IDCafe", venta.IDCafe);
+                    commandForQuery.Parameters.AddWithValue("@Cantidad", venta.Cantidad);
+                    commandForQuery.Parameters.AddWithValue("@PrecioTotal", venta.PrecioTotal);
+                    commandForQuery.Parameters.AddWithValue("@Pago", venta.Pago);
+                    commandForQuery.Parameters.AddWithValue("@Saldo", venta.Saldo);
+                    commandForQuery.Parameters.AddWithValue("@Debe", venta.Debe);
+                    commandForQuery.Parameters.AddWithValue("@PesoTotal", venta.PesoTotal);
+
+
+                    filas = commandForQuery.ExecuteNonQuery();
+                }
+            }
+            finally
+            {
+                _connection.Close();
+            }
             return filas;
         }
     }
