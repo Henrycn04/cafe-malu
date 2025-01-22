@@ -43,6 +43,10 @@ builder.Services.AddTransient<ObtenerClientesHandler>();
 builder.Services.AddScoped<IObtenerClientes, ObtenerClientesHandler>();
 builder.Services.AddScoped<ObtenerClientesQuery>();
 
+builder.Services.AddTransient<ObtenerVentasHandler>();
+builder.Services.AddScoped<IObtenerVentas, ObtenerVentasHandler>();
+builder.Services.AddScoped<ObtenerVentasQuery>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

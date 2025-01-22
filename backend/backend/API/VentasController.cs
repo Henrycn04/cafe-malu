@@ -14,14 +14,16 @@ namespace backend.API
         private RegistrarCafeCommand _registrarCafeCommand;
         private ObtenerCafesQuery _obtenerCafesQuery;
         private ObtenerClientesQuery _obtenerClientesQuery;
+        private ObtenerVentasQuery _obtenerVentasQuery;
 
-        public VentasController(RegistrarVentaCommand registrarVentaCommand, RegistrarClienteCommand registrarClienteCommand, RegistrarCafeCommand registrarCafeCommand, ObtenerClientesQuery obtenerClientesQuery, ObtenerCafesQuery obtenerCafesQuery)
+        public VentasController(RegistrarVentaCommand registrarVentaCommand, RegistrarClienteCommand registrarClienteCommand, RegistrarCafeCommand registrarCafeCommand, ObtenerClientesQuery obtenerClientesQuery, ObtenerCafesQuery obtenerCafesQuery, ObtenerVentasQuery obtenerVentasQuery)
         {
             this._registrarVentaCommand = registrarVentaCommand;
             this._registrarClienteCommand = registrarClienteCommand;
             this._registrarCafeCommand = registrarCafeCommand;
             this._obtenerCafesQuery = obtenerCafesQuery;
             this._obtenerClientesQuery = obtenerClientesQuery;
+            this._obtenerVentasQuery = obtenerVentasQuery;
         }
 
         [HttpPost]
@@ -106,6 +108,14 @@ namespace backend.API
             ListaCafesModel cafes = new ListaCafesModel();
             cafes = this._obtenerCafesQuery.ObtenerCafes();
             return Ok(cafes);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<ListaVentasModel>> ObtenerVentas()
+        {
+            ListaVentasModel ventas = new ListaVentasModel();
+            ventas = this._obtenerVentasQuery.ObtenerVentas();
+            return Ok(ventas);
         }
     }
 }
