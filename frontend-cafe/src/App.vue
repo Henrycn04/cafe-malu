@@ -1,15 +1,10 @@
 <template>
-  <HelloWorld/>
+  <router-view></router-view> <!-- Este es el contenedor donde se mostrará el componente actual -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 

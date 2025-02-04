@@ -49,7 +49,6 @@ namespace backend.Infrastructure
             {
                 _connection.Close();
             }
-
             return new ListaClientesModel { Clientes = listaClientes };
         }
     }

@@ -1,5 +1,8 @@
 <template>
   <div class="form-container">
+    <h1>Listado de Ventas</h1>
+    <button @click="redirectToVerVentas">Ver Ventas</button>
+
     <h1>Agregar Venta</h1>
     <form class="add-sale horizontal-form" @submit.prevent="guardarVenta">
       <!-- Cliente -->
@@ -75,7 +78,10 @@
           required
         />
       </div>
-
+      <div>
+  <label>Total: </label>
+  <span>{{ total.toFixed(2) }}</span>
+</div>
       <!-- Botón para guardar -->
       <div class="form-group">
         <button type="submit" class="save-button">Guardar Venta</button>
@@ -169,7 +175,18 @@ export default {
       mostrarModalCafe: false,
     };
   },
+  computed: {
+    total() {
+    // Calcular el total en función de Cafe y Cantidad
+    return this.venta.Cafe && this.venta.Cafe.precioUnitario && this.venta.Cantidad
+      ? this.venta.Cafe.precioUnitario * this.venta.Cantidad
+      : 0;
+  },
+  },
   methods: {
+    redirectToVerVentas() {
+      this.$router.push({ name: 'VerVentas' });
+    },
     customFilter(option, search) {
       if (!search) return true;
       return option.label.toLowerCase().includes(search.toLowerCase());
@@ -208,7 +225,7 @@ export default {
     },
     guardarVenta() {
       if (this.validarVenta()) {
-        // agregar venta
+        this.addNuevaVenta();
         alert("Venta registrada exitosamente.");
         this.resetFormulario();
       } else {
@@ -288,19 +305,25 @@ export default {
       })
     },
     addNuevaVenta() {
-      axios.post(this.$backendAddress + "api/Ventas/RegistrarVenta", {
-        IDCliente: this.venta.Cliente.ID,
-        Fecha: this.venta.Fecha,
-        Cafe: this.venta.Cafe.ID,
-        Cantidad: this.venta.Cantidad,
-        Pago: this.venta.Pago,
-      }).then(()=>{
-        window.location.reload();
-      }).catch((error)=>{
-        console.error("Error en venta: ", error.response ? error.response.data : error);
-        window.location.reload();
-      })
-    },
+  const ventaData = {
+    idCliente: this.venta.Cliente.id,
+    fecha: this.venta.Fecha,
+    idCafe: this.venta.Cafe.id,
+    cantidad: this.venta.Cantidad,
+    pago: this.venta.Pago,
+  };
+  console.log("Venta: ", ventaData);
+  axios.post(this.$backendAddress + "api/Ventas/RegistrarVenta", ventaData)
+    .then(() => {
+      
+      window.location.reload();
+    })
+    .catch((error) => {
+      console.error("Error en venta: ", error.response ? error.response.data : error);
+      window.location.reload();
+    });
+}
+
     
   },
   mounted() {

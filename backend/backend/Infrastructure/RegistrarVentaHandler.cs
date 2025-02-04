@@ -8,8 +8,8 @@ namespace backend.Infrastructure
     public interface IRegistrarVenta
     {
         int RegistrarVenta(VentaModel venta);
-        double ObtenerPrecioCafe(int IDCafe);
-        double ObtenerPesoCafe(int IDCafe);
+        decimal ObtenerPrecioCafe(int IDCafe);
+        decimal ObtenerPesoCafe(int IDCafe);
     }
     public class RegistrarVentaHandler : IRegistrarVenta
     {
@@ -55,20 +55,24 @@ namespace backend.Infrastructure
             }
             return filas;
         }
-
-        public double ObtenerPrecioCafe(int IDCafe)
+        public decimal ObtenerPrecioCafe(int IDCafe)
         {
-            double precio = 0.0;
+            decimal precio = 0.0m;
             string query = @"
-                SELECT PrecioUnitario FROM dbo.Cafe
-                WHERE ID = @IDCafe";
+        SELECT PrecioUnitario FROM dbo.Cafe
+        WHERE ID = @IDCafe";
+
             try
             {
                 _connection.Open();
                 using (SqlCommand commandForQuery = new SqlCommand(query, _connection))
                 {
                     commandForQuery.Parameters.AddWithValue("@IDCafe", IDCafe);
-                    precio = (double)commandForQuery.ExecuteScalar();
+                    var result = commandForQuery.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        precio = (decimal)result;  // Cast a decimal
+                    }
                 }
             }
             finally
@@ -78,9 +82,11 @@ namespace backend.Infrastructure
             return precio;
         }
 
-        public double ObtenerPesoCafe(int IDCafe)
+
+
+        public decimal ObtenerPesoCafe(int IDCafe)
         {
-            double peso = 0.0;
+            decimal peso = 0;
             string query = @"
                 SELECT Peso FROM dbo.Cafe
                 WHERE ID = @IDCafe";
@@ -90,7 +96,11 @@ namespace backend.Infrastructure
                 using (SqlCommand commandForQuery = new SqlCommand(query, _connection))
                 {
                     commandForQuery.Parameters.AddWithValue("@IDCafe", IDCafe);
-                    peso = (double)commandForQuery.ExecuteScalar();
+                    var result = commandForQuery.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        peso = (decimal)result;  // Cast a decimal
+                    }
                 }
             }
             finally

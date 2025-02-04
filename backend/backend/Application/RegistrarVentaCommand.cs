@@ -31,17 +31,17 @@ namespace backend.Application
             Calendar calendario = cultura.Calendar;
             CalendarWeekRule reglaSemana = cultura.DateTimeFormat.CalendarWeekRule;
             DayOfWeek primerDiaSemana = cultura.DateTimeFormat.FirstDayOfWeek;
-            int semana = calendario.GetWeekOfYear(venta.Fecha, reglaSemana, primerDiaSemana);
+            byte semana = (byte)calendario.GetWeekOfYear(venta.Fecha, reglaSemana, primerDiaSemana);
             venta.Semana = semana;
         }
 
         private bool CalcularPrecioyPesoTotales(VentaModel venta)
         {
-            double precioUnitarioCafe = 0.0;
-            double pesoUnitarioCafe = 0.0;
+            decimal precioUnitarioCafe = 0;
+            decimal pesoUnitarioCafe = 0;
             precioUnitarioCafe = this._IRegistrarVenta.ObtenerPrecioCafe(venta.IDCafe);
             pesoUnitarioCafe = this._IRegistrarVenta.ObtenerPesoCafe(venta.IDCafe);
-            if (precioUnitarioCafe != 0.0 && pesoUnitarioCafe != 0.0)
+            if (precioUnitarioCafe != 0 && pesoUnitarioCafe != 0)
             {
                 venta.PesoTotal = pesoUnitarioCafe * venta.Cantidad;
                 venta.PrecioTotal = precioUnitarioCafe * venta.Cantidad;

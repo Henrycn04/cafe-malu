@@ -29,6 +29,7 @@ namespace backend.API
         [HttpPost]
         public async Task<ActionResult<bool>> RegistrarVenta([FromBody] VentaModel venta)
         {
+            
             if (venta != null)
             {
                 int filas = 0;

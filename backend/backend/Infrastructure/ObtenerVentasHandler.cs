@@ -38,14 +38,14 @@ namespace backend.Infrastructure
                             ID = reader.GetInt32(reader.GetOrdinal("ID")),
                             IDCliente = reader.GetInt32(reader.GetOrdinal("IDCliente")),
                             Fecha = reader.GetDateTime(reader.GetOrdinal("Fecha")),
-                            Semana = reader.GetInt32(reader.GetOrdinal("Semana")),
+                            Semana = reader.GetByte(reader.GetOrdinal("Semana")),
                             IDCafe = reader.GetInt32(reader.GetOrdinal("IDCafe")),
                             Cantidad = reader.GetInt32(reader.GetOrdinal("Cantidad")),
-                            PrecioTotal = reader.GetDouble(reader.GetOrdinal("PrecioTotal")),
-                            Pago = reader.GetDouble(reader.GetOrdinal("Pago")),
-                            Saldo = reader.GetDouble(reader.GetOrdinal("Saldo")),
+                            PrecioTotal = reader.GetDecimal(reader.GetOrdinal("PrecioTotal")),
+                            Pago = reader.GetDecimal(reader.GetOrdinal("Pago")),
+                            Saldo = reader.GetDecimal(reader.GetOrdinal("Saldo")),
                             Debe = reader.GetBoolean(reader.GetOrdinal("Debe")),
-                            PesoTotal = reader.GetDouble(reader.GetOrdinal("PesoTotal"))
+                            PesoTotal = reader.GetDecimal(reader.GetOrdinal("PesoTotal"))
                         };
                         listasVentas.Add(venta);
                     }

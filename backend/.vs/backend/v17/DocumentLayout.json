@@ -3,40 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\XPC\\cafe-malu\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|c:\\users\\xpc\\cafe-malu\\backend\\backend\\infrastructure\\registrarclientehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|solutionrelative:backend\\infrastructure\\registrarclientehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|c:\\users\\xpc\\cafe-malu\\backend\\backend\\infrastructure\\obtenerventashandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|solutionrelative:backend\\infrastructure\\obtenerventashandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|c:\\users\\xpc\\cafe-malu\\backend\\backend\\infrastructure\\registrarventahandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|solutionrelative:backend\\infrastructure\\registrarventahandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|c:\\users\\xpc\\cafe-malu\\backend\\backend\\domain\\clientemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|solutionrelative:backend\\domain\\clientemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|c:\\users\\xpc\\cafe-malu\\backend\\backend\\infrastructure\\obtenerclienteshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|solutionrelative:backend\\infrastructure\\obtenerclienteshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|c:\\users\\xpc\\cafe-malu\\backend\\backend\\api\\ventascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|solutionrelative:backend\\api\\ventascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|c:\\users\\xpc\\cafe-malu\\backend\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|solutionrelative:backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|c:\\users\\xpc\\cafe-malu\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|c:\\users\\xpc\\cafe-malu\\backend\\backend\\application\\registrarventacommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|solutionrelative:backend\\application\\registrarventacommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|c:\\users\\xpc\\cafe-malu\\backend\\backend\\domain\\ventamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|solutionrelative:backend\\domain\\ventamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|c:\\users\\xpc\\cafe-malu\\backend\\backend\\domain\\cafemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|solutionrelative:backend\\domain\\cafemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|c:\\users\\xpc\\cafe-malu\\backend\\backend\\infrastructure\\registrarventahandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|solutionrelative:backend\\infrastructure\\registrarventahandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|c:\\users\\xpc\\cafe-malu\\backend\\backend\\api\\ventascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|solutionrelative:backend\\api\\ventascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|c:\\users\\xpc\\cafe-malu\\backend\\backend\\infrastructure\\registrarclientehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|solutionrelative:backend\\infrastructure\\registrarclientehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{79398F8B-02A1-4E6F-A3CD-E8D2141747D6}|backend\\backend.csproj|c:\\users\\xpc\\cafe-malu\\backend\\backend\\infrastructure\\registrarcafehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,43 +38,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ObtenerClientesHandler.cs",
-              "DocumentMoniker": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Infrastructure\\ObtenerClientesHandler.cs",
-              "RelativeDocumentMoniker": "backend\\Infrastructure\\ObtenerClientesHandler.cs",
-              "ToolTip": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Infrastructure\\ObtenerClientesHandler.cs",
-              "RelativeToolTip": "backend\\Infrastructure\\ObtenerClientesHandler.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAwwBYAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "ObtenerVentasHandler.cs",
+              "DocumentMoniker": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Infrastructure\\ObtenerVentasHandler.cs",
+              "RelativeDocumentMoniker": "backend\\Infrastructure\\ObtenerVentasHandler.cs",
+              "ToolTip": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Infrastructure\\ObtenerVentasHandler.cs",
+              "RelativeToolTip": "backend\\Infrastructure\\ObtenerVentasHandler.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAD4vygAAABRAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T22:47:24.672Z"
+              "WhenOpened": "2025-01-22T02:27:52.142Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Program.cs",
-              "RelativeDocumentMoniker": "backend\\Program.cs",
-              "ToolTip": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Program.cs",
-              "RelativeToolTip": "backend\\Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "VentaModel.cs",
+              "DocumentMoniker": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Domain\\VentaModel.cs",
+              "RelativeDocumentMoniker": "backend\\Domain\\VentaModel.cs",
+              "ToolTip": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Domain\\VentaModel.cs",
+              "RelativeToolTip": "backend\\Domain\\VentaModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T22:37:17.756Z"
+              "WhenOpened": "2025-01-22T02:23:00.871Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\appsettings.json",
-              "RelativeDocumentMoniker": "backend\\appsettings.json",
-              "ToolTip": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\appsettings.json",
-              "RelativeToolTip": "backend\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-16T22:01:42.733Z"
+              "DocumentIndex": 1,
+              "Title": "RegistrarVentaCommand.cs",
+              "DocumentMoniker": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Application\\RegistrarVentaCommand.cs",
+              "RelativeDocumentMoniker": "backend\\Application\\RegistrarVentaCommand.cs",
+              "ToolTip": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Application\\RegistrarVentaCommand.cs",
+              "RelativeToolTip": "backend\\Application\\RegistrarVentaCommand.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAtwCUAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T02:04:12.325Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -96,25 +87,27 @@
               "RelativeDocumentMoniker": "backend\\API\\VentasController.cs",
               "ToolTip": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\API\\VentasController.cs",
               "RelativeToolTip": "backend\\API\\VentasController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAIwCUAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T20:20:47.518Z"
+              "WhenOpened": "2025-01-16T20:20:47.518Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "RegistrarVentaHandler.cs",
               "DocumentMoniker": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Infrastructure\\RegistrarVentaHandler.cs",
               "RelativeDocumentMoniker": "backend\\Infrastructure\\RegistrarVentaHandler.cs",
               "ToolTip": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Infrastructure\\RegistrarVentaHandler.cs",
               "RelativeToolTip": "backend\\Infrastructure\\RegistrarVentaHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAZAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAvwAwAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T20:46:45.8Z"
+              "WhenOpened": "2025-01-16T20:46:45.8Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "RegistrarClienteHandler.cs",
               "DocumentMoniker": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Infrastructure\\RegistrarClienteHandler.cs",
               "RelativeDocumentMoniker": "backend\\Infrastructure\\RegistrarClienteHandler.cs",
@@ -127,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "RegistrarCafeHandler.cs",
               "DocumentMoniker": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Infrastructure\\RegistrarCafeHandler.cs",
               "RelativeDocumentMoniker": "backend\\Infrastructure\\RegistrarCafeHandler.cs",
@@ -135,43 +128,8 @@
               "RelativeToolTip": "backend\\Infrastructure\\RegistrarCafeHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T20:47:17.757Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CafeModel.cs",
-              "DocumentMoniker": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Domain\\CafeModel.cs",
-              "RelativeDocumentMoniker": "backend\\Domain\\CafeModel.cs",
-              "ToolTip": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Domain\\CafeModel.cs",
-              "RelativeToolTip": "backend\\Domain\\CafeModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T20:25:54.774Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ClienteModel.cs",
-              "DocumentMoniker": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Domain\\ClienteModel.cs",
-              "RelativeDocumentMoniker": "backend\\Domain\\ClienteModel.cs",
-              "ToolTip": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Domain\\ClienteModel.cs",
-              "RelativeToolTip": "backend\\Domain\\ClienteModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T20:25:40.734Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "VentaModel.cs",
-              "DocumentMoniker": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Domain\\VentaModel.cs",
-              "RelativeDocumentMoniker": "backend\\Domain\\VentaModel.cs",
-              "ToolTip": "C:\\Users\\XPC\\cafe-malu\\backend\\backend\\Domain\\VentaModel.cs",
-              "RelativeToolTip": "backend\\Domain\\VentaModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T20:25:27.776Z"
+              "WhenOpened": "2025-01-16T20:47:17.757Z",
+              "EditorCaption": ""
             }
           ]
         }
