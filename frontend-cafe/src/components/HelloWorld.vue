@@ -254,7 +254,6 @@ export default {
         .then((response) => {
           this.clientes1 = response.data.clientes; // Verifica que sea un arreglo.
           this.clientes = [...this.clientes1]; // Verifica que sea un arreglo.
-          console.log("Clientes: ", this.clientes);
         })
         .catch((error) => {
           console.error("Error obteniendo clientes:", error);
@@ -266,7 +265,6 @@ export default {
         .then((response) => {
           this.cafes1 = response.data.cafes; // Verifica que sea un arreglo.
           this.cafes = [...this.cafes1]; // Verifica que sea un arreglo.
-          console.log("Cafés: ", this.cafes);
         })
         .catch((error) => {
           console.error("Error obteniendo cafés:", error);
