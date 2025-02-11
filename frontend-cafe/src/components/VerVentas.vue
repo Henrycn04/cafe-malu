@@ -69,7 +69,7 @@
           <div>
               <button class="btn btn-success" @click="aplicarFiltros" style="margin-top: 40px;" >Aplicar Filtros</button>
               
-              <button class="btn btn-danger ms-2" @click="limpiarFiltros" style="margin-top: 40px; margin-left: 10px;">Limpiar Filtros</button>
+              <button class="btn btn-danger ms-2" @click="limpiarFiltros" style="margin-top: 40px; margin-left: 10px;" id="resetButton">Limpiar Filtros</button>
           </div>                        
         </div>
       </div>
@@ -115,6 +115,9 @@
   import noUiSlider from 'nouislider';
   import Multiselect from 'vue-multiselect';
   import 'vue-multiselect/dist/vue-multiselect.min.css';
+  import "bootstrap/dist/css/bootstrap.min.css";
+  import "bootstrap";
+
 
   export default {
     components: {
@@ -224,10 +227,10 @@
       },
       limpiarFiltros() {
         this.filtros = {
-          cliente: 0,
+          cliente: [],
           fechaInicio: null,
           fechaFinal: null,
-          cafe: 0,
+          cafe: [],
           precio: 0,
           deudor: false,
           peso: 0,
@@ -259,6 +262,26 @@
         if (this.filtros.fechaFinal) {
             filtrado = filtrado.filter(venta =>
             venta.fecha !== null && new Date(venta.fecha) <= new Date(this.filtros.fechaFinal)
+            );
+        }
+        if (this.filtros.inicioPrecio) {
+            filtrado = filtrado.filter ( venta =>
+            venta.precioTotal !== null && venta.precioTotal >= this.filtros.inicioPrecio
+            );
+        }
+        if (this.filtros.finalPrecio) {
+            filtrado = filtrado.filter ( venta =>
+            venta.precioTotal !== null && venta.precioTotal <= this.filtros.finalPrecio
+            );
+        }
+        if (this.filtros.inicioPeso) {
+            filtrado = filtrado.filter ( venta =>
+            venta.pesoTotal !== null && venta.pesoTotal >= this.filtros.inicioPeso
+            );
+        }
+        if (this.filtros.finalPeso) {
+            filtrado = filtrado.filter ( venta =>
+            venta.pesoTotal !== null && venta.pesoTotal <= this.filtros.finalPeso
             );
         }
         this.ventasFiltradas = filtrado;
